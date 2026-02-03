@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Admission Application Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap');
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #f3f4f6;
+            --text-color: #374151;
+            --border-color: #d1d5db;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef2f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Full width for address and headers */
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        /* Radio buttons for Sex */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            height: 46px; /* Match input height */
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+
+        /* James Signature Animation */
+        .signature-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .james-badge {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #888;
+            padding: 5px 15px;
+            background: #f9f9f9;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
+            user-select: none;
+        }
+
+        /* Hover Animation */
+        .james-badge:hover {
+            color: var(--primary-color);
+            transform: scale(1.2) rotate(-5deg);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Student Admission Application Form</h1>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Student's Full Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="class">Class</label>
+                <input type="text" id="class" placeholder="Grade/Standard" required>
+            </div>
+
+            <div class="form-group">
+                <label for="father">Father's Name</label>
+                <input type="text" id="father" placeholder="Father's Full Name">
+            </div>
+
+            <div class="form-group">
+                <label for="mother">Mother's Name</label>
+                <input type="text" id="mother" placeholder="Mother's Full Name">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">D.O.B</label>
+                <input type="date" id="dob">
+            </div>
+
+            <div class="form-group">
+                <label>Sex</label>
+                <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="sex" value="Male"> Male</label>
+                    <label class="radio-option"><input type="radio" name="sex" value="Female"> Female</label>
+                    <label class="radio-option"><input type="radio" name="sex" value="Other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="school">School</label>
+                <input type="text" id="school" placeholder="Current/Previous School">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="general">General</option>
+                    <option value="sc">SC</option>
+                    <option value="st">ST</option>
+                    <option value="obc">OBC</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="address">Address</label>
+                <textarea id="address" placeholder="Full Residential Address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="admission-no">Admission No.</label>
+                <input type="text" id="admission-no" placeholder="Office Use Only">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone No.</label>
+                <input type="tel" id="phone" placeholder="Contact Number">
+            </div>
+
+            <button type="button" class="submit-btn full-width">Submit Application</button>
+        </form>
+
+        <div class="signature-container">
+            <div class="james-badge">by James</div>
+        </div>
+    </div>
+
+</body>
+</html>
